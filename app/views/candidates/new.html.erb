@@ -16,8 +16,10 @@
     </div>
     <div>
         <%= form.label :politics  %>
-        <%= form.text_field :politics  %>
+        <%= form.text_area :politics  %>
     </div>
-    <%= form.submit %> 
-
+    <%= form.submit %>
 <% end %>
+
+<br />
+<%= link_to 'return to Candidate List', candidates_path %>  

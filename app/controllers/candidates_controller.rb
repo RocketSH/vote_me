@@ -1,6 +1,7 @@
 class CandidatesController < ApplicationController
 
     def index
+      @candidates = Candidate.all
     end
 
     def new
@@ -8,5 +9,17 @@ class CandidatesController < ApplicationController
     end
     
     def create
+      @candidate = Candidate.new(candidate_params)
+
+      if @candidate.save
+        redirect_to candidates_path, notice: "The candidate has been successfully created."
+      else
+        render :new
+      end
+    end
+
+    private
+    def candidate_params
+      params.require(:candidate).permit(:name, :age, :party, :politics)
     end
 end
