@@ -12,7 +12,9 @@ class CandidatesController < ApplicationController
       @candidate = Candidate.new(candidate_params)
 
       if @candidate.save
-        redirect_to candidates_path, notice: "The candidate has been successfully created."
+        flash[:notice] = "The candidate has been successfully created."
+        redirect_to candidates_path,
+ # notice: "The candidate has been successfully created."
       else
         render :new
       end
