@@ -13,7 +13,7 @@ class CandidatesController < ApplicationController
 
       if @candidate.save
         flash[:notice] = "The candidate has been successfully created."
-        redirect_to candidates_path,
+        redirect_to candidates_path 
  # notice: "The candidate has been successfully created."
       else
         render :new

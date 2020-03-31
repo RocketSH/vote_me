@@ -8,16 +8,14 @@
         <tr>
             <td>Name</td>
             <td>Party</td>
-            <td>Politics</td>
             <td>Votes</td>
         </tr>
     </thead>
     <tbody>
         <% @candidates.each do |candidate| %>
         <tr>
-            <td><%= candidate.name %>(age:<%= candidate.age %>)</td>
+            <td><link_to candidates/<%= candidate.id %>"><%= candidate.name %>(age:<%= candidate.age %>)</td>
             <td><%= candidate.party %></td>
-            <td><%= candidate.politics %></td>
             <td><%= candidate.votes %></td>
         </tr>
         <% end %>
@@ -25,26 +23,3 @@
 </table>
 
 
-
-<%= link_to "New Candidate", new_candidate_path %>
-
-<table>
-    <thead>
-        <tr>
-            <td>Name</td>
-            <td>Party</td>
-            <td>Politics</td>
-            <td>Votes</td>
-        </tr>
-    </thead>
-    <tbody>
-        <% @candidates.each do |candidate| %>
-            <tr>
-                <td><%= candidate.name %>(age:<%= candidate.age %>)</td>
-                <td><%= candidate.party %></td>
-                <td><%= candidate.politics %></td>
-                <td><%= candidate.votes %></td>
-            </tr>
-        <% end %>
-    </tbody>
-</table>
