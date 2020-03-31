@@ -14,7 +14,8 @@
     <tbody>
         <% @candidates.each do |candidate| %>
         <tr>
-            <td><link_to candidates/<%= candidate.id %>"><%= candidate.name %>(age:<%= candidate.age %>)</td>
+            <td><%= link_to candidate.name, candidate_path(candidate.id) %></td>
+            <td><%= candidate.age %></td>
             <td><%= candidate.party %></td>
             <td><%= candidate.votes %></td>
         </tr>
