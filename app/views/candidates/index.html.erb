@@ -1,4 +1,5 @@
-<%#= flash[:notice] %>
+<%= flash[:notice] %>
+
 <h1>Candidate List</h1>
 
 <%= link_to "New Candidate", new_candidate_path %>
@@ -8,7 +9,8 @@
         <tr>
             <td>Name</td>
             <td>Party</td>
-            <td>Votes</td>
+            <td>Politics</td>
+            <td>Votes</td> 
         </tr>
     </thead>
     <tbody>
@@ -17,6 +19,7 @@
             <td><%= link_to candidate.name, candidate_path(candidate.id) %></td>
             <td><%= candidate.age %></td>
             <td><%= candidate.party %></td>
+            <td><%= candidate.politics %></td>
             <td><%= candidate.votes %></td>
         </tr>
         <% end %>
