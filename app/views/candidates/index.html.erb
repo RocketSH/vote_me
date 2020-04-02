@@ -1,18 +1,19 @@
-<%= flash[:notice] %>
+ <%= flash[:notice] %> 
 
 <h1>Candidate List</h1>
 
 <%= link_to "New Candidate", new_candidate_path %>
 
 <table>
-    <thead>
-        <tr>
-            <td>Name</td>
-            <td>Party</td>
-            <td>Politics</td>
-            <td>Votes</td> 
-        </tr>
-    </thead>
+    <tbody>
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Party</td>
+                <td>Politics</td>
+                <td>Votes</td> 
+            </tr>
+        </thead>
     <tbody>
         <% @candidates.each do |candidate| %>
         <tr>
@@ -25,5 +26,8 @@
         <% end %>
     </tbody>
 </table>
+
+
+
 
 
