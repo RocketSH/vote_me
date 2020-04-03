@@ -44,6 +44,13 @@ class CandidatesController < ApplicationController
       redirect_to candidates_path, notice: "The candidate has been successfully delete."
     end
 
+    def vote
+      @candidate = Candidate.find_by(id: params[:id])
+      @candidate.increment(:votes) 
+      @candidate.save 
+      redirect_to candidates_path, notice: "The candidate has been successfully voted."
+    end
+      
     private
     def candidate_params
       params.require(:candidate).permit(:name, :age, :party, :politics)

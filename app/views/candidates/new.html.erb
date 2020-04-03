@@ -8,26 +8,7 @@
     </ul>
 <% end %>
 
-<%= form_for(@candidate) do |form| %>
-    <div>
-        <%= form.label :name  %>
-        <%= form.text_field :name  %>
-    </div>
-
-    <div>
-        <%= form.label :party  %>
-        <%= form.text_field :party  %>
-    </div>
-    <div>
-        <%= form.label :age  %>
-        <%= form.text_field :age  %>
-    </div>
-    <div>
-        <%= form.label :politics  %>
-        <%= form.text_area :politics  %>
-    </div>
-    <%= form.submit %>
-<% end %>
+<%= render "form", candidate: @candidate %>
 
 <br />
 <%= link_to "回候選人列表", candidates_path %>

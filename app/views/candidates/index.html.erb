@@ -20,7 +20,7 @@
     <tbody>
         <% @candidates.each do |candidate| %>
         <tr>
-            <td><%= link_to "投給這位", "#" %></td>
+            <td><%= link_to "投給這位", vote_candidate_path(candidate), method: "post", data: { confirm: "確定投票？" } %></td>
             <td><%= link_to candidate.name, candidate_path(candidate) %></td>
             <td><%= candidate.age %></td>
             <td><%= candidate.party %></td>
