@@ -1,27 +1,35 @@
  <%= flash[:notice] %> 
 
-<h1>Candidate List</h1>
+<h1>候選人列表</h1>
 
-<%= link_to "New Candidate", new_candidate_path %>
+<%= link_to "新增候選人", new_candidate_path %>
 
 <table>
     <tbody>
         <thead>
             <tr>
-                <td>Name</td>
-                <td>Party</td>
-                <td>Politics</td>
-                <td>Votes</td> 
+                <td>投票</td>
+                <td>候選人姓名</td>
+                <td>年齡</td>
+                <td>政黨</td>
+                <td>政見</td>
+                <td>得票數</td> 
+                <td>處理</td>
             </tr>
         </thead>
     <tbody>
         <% @candidates.each do |candidate| %>
         <tr>
+            <td><%= link_to "投給這位", "#" %></td>
             <td><%= link_to candidate.name, candidate_path(candidate.id) %></td>
             <td><%= candidate.age %></td>
             <td><%= candidate.party %></td>
             <td><%= candidate.politics %></td>
             <td><%= candidate.votes %></td>
+            <td>
+                <%=link_to "編輯", edit_candidate_path(candidate) %>
+                <%=link_to "刪除", candidate_path(candidate), method: "delete", date: { confirm: "確認" } %>
+            </td>
         </tr>
         <% end %>
     </tbody>
