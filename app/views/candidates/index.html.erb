@@ -21,21 +21,17 @@
         <% @candidates.each do |candidate| %>
         <tr>
             <td><%= link_to "投給這位", "#" %></td>
-            <td><%= link_to candidate.name, candidate_path(candidate.id) %></td>
+            <td><%= link_to candidate.name, candidate_path(candidate) %></td>
             <td><%= candidate.age %></td>
             <td><%= candidate.party %></td>
             <td><%= candidate.politics %></td>
             <td><%= candidate.votes %></td>
             <td>
                 <%=link_to "編輯", edit_candidate_path(candidate) %>
-                <%=link_to "刪除", candidate_path(candidate), method: "delete", date: { confirm: "確認" } %>
+                <%=link_to "刪除", candidate_path(candidate), method: "delete", data: { confirm: "確定刪除嗎?" } %>
             </td>
         </tr>
         <% end %>
     </tbody>
 </table>
-
-
-
-
 
